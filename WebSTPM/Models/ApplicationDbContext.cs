@@ -219,10 +219,10 @@ namespace WebSTPM.Models
                         UpdatedAt = DateTime.Now
                     },
                     new AdminUser
-           
+                    {
                         AdminUserId = 2,
                         Username = "instructor",
-                        Password = "E10ADC3949BA59ABBE56E057F20F883E", 
+                        Password = "employee123", 
                         Role = false, 
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
