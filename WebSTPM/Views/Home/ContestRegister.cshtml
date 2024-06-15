@@ -1,0 +1,128 @@
+﻿@model WebSTPM.ViewModels.TeamViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+@{
+    var image = new[] {
+        "Replace", "Align", "Caption", "Remove", "InsertLink", "OpenImageLink", "-",
+        "EditImageLink", "RemoveImageLink", "Display", "AltText", "Dimension"
+    };
+    var tools = new[] {
+        "Bold", "Italic", "Underline", "StrikeThrough",
+        "FontName", "FontSize", "FontColor", "BackgroundColor",
+        "LowerCase", "UpperCase", "|",
+        "Formats", "Alignments", "OrderedList", "UnorderedList",
+        "Outdent", "Indent", "|",
+        "CreateLink", "Image", "CreateTable", "|", "ClearFormat", "Print",
+        "SourceCode", "FullScreen", "|", "Undo", "Redo"
+    };
+}
+<div class="container-fluid p-0 position-relative">
+    <img src="https://edt.dthu.edu.vn/images/top-banner.jpg" class="img-overlay" alt="Alternate Text">
+    <div class="overlay">
+        <div class="text-overlay">Đăng ký tham gia hội thi</div>
+        <span>Trang chủ > Hội thi > Đăng ký tham gia hội thi</span>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2 class="fw-normal mb-4">Đăng ký tham gia cuộc thi</h2>
+
+    <form asp-action="ContestRegister" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="ContestId" type="hidden" />
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="TeamMember" class="form-label"></label>
+                <input asp-for="TeamMember" class="form-control" required />
+                <span asp-validation-for="TeamMember" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="ProjectName" class="form-label"></label>
+                <input asp-for="ProjectName" class="form-control" required />
+                <span asp-validation-for="ProjectName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="InstructorName" class="form-label"></label>
+                <input asp-for="InstructorName" class="form-control" required />
+                <span asp-validation-for="InstructorName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="ClassName" class="form-label"></label>
+                <input asp-for="ClassName" class="form-control" required />
+                <span asp-validation-for="ClassName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+
+                <label asp-for="Description" class="control-label">Mô tả dự án</label>
+                <ejs-richtexteditor asp-for="Description" id="defaultRTE">
+                    <e-content-template>
+
+                    </e-content-template>
+                </ejs-richtexteditor>
+                <span asp-validation-for="Description" class="text-danger"></span>
+             
+            </div>
+        </div>
+    
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-success">Đăng ký</button>
+            <a class="btn btn-primary" asp-action="Index">Quay lại danh sách</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const richTextEditor = document.getElementById('defaultRTE').ej2_instances[0];
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function (event) {
+                const content = richTextEditor.value;
+
+                const contentInput = document.createElement('input');
+                contentInput.type = 'hidden';
+                contentInput.name = 'Description';
+                contentInput.value = content;
+                form.appendChild(contentInput);
+            });
+
+
+
+            richTextEditor.beforePasteCleanup = function (args) {
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = args.value;
+
+                var images = tempDiv.getElementsByTagName('img');
+                for (var i = 0; i < images.length; i++) {
+                    convertToBase64(images[i]);
+                }
+
+                args.value = tempDiv.innerHTML;
+            };
+
+            function convertToBase64(img) {
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+
+                var dataURL = canvas.toDataURL('image/png');
+                img.src = dataURL;
+            }
+
+            document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+                var fileName = e.target.value.split('\\').pop();
+                e.target.nextElementSibling.innerHTML = fileName;
+            });
+        });
+    </script>
+}
+

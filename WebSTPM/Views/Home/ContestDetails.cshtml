@@ -1,0 +1,49 @@
+﻿@model WebSTPM.Models.Contest
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container-fluid p-0 position-relative">
+    <img src="https://edt.dthu.edu.vn/images/top-banner.jpg" class="img-overlay" alt="Alternate Text">
+    <div class="overlay">
+        <div class="text-overlay">@Model.ContestName</div>
+        <span>Trang chủ > Hội thi > @Model.ContestName</span>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 col-sm-12">
+            <h1 class="fw-bold">@Model.ContestName</h1>
+            <p class="text-muted">Ngày bắt đầu: @Model.StartDate.ToShortDateString() - Ngày kết thúc: @Model.EndDate.ToShortDateString()</p>
+            <hr />
+            <div>
+                <h4>Giới thiệu</h4>
+                <p>@Model.Introduce</p>
+            </div>
+            <div>
+                <h4>Mô tả chi tiết</h4>
+                <p>@Html.Raw(Model.Description)</p>
+            </div>
+            <a class="btn btn-primary mt-3" asp-action="Contests">Quay lại danh sách</a>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+    
+            <div class="list-unstyled">
+                <div>
+                    <i class="fa-solid fa-chevron-right"></i><a href="#">Tin tức & Sự kiện</a>
+                 </div>
+                <div>
+                    <i class="fa-solid fa-chevron-right"></i><a href="#">Hợp tác đào tạo</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-chevron-right"></i><a href="#">Ảnh hoạt động</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-chevron-right"></i><a href="#">Video tại EDT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -70,7 +70,7 @@ namespace WebSTPM.Models
                         Description = "Website bán sách",
                         InstructorName = "Cô Linh",
                         ClassName = "ĐHCNTT21A",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -83,7 +83,7 @@ namespace WebSTPM.Models
                         Description = "Website bán rượu vang",
                         InstructorName = "Cô Linh",
                         ClassName = "ĐHCNTT21A",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -96,7 +96,7 @@ namespace WebSTPM.Models
                         Description = "Website quản lý hồ sơ viên chức và kế khai giảng dạy",
                         InstructorName = "Thầy Quốc Anh",
                         ClassName = "ĐHCNTT22A",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -109,7 +109,7 @@ namespace WebSTPM.Models
                         Description = "Phần mềm mobile Cookguide",
                         InstructorName = "Thầy Quốc Anh",
                         ClassName = "ĐHCNTT21A",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -122,7 +122,7 @@ namespace WebSTPM.Models
                         Description = "Website cho hội thi sáng tạo phần mềm",
                         InstructorName = "Cô Uyên Minh",
                         ClassName = "ĐHCNTT21B",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -135,7 +135,7 @@ namespace WebSTPM.Models
                         Description = "Xây dựng phần mềm quản lý shop giày dép",
                         InstructorName = "Cô Hương",
                         ClassName = "ĐHCNTT21B",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -148,7 +148,7 @@ namespace WebSTPM.Models
                         Description = "Phần mềm quản lý tiến độ học tập của sinh viên",
                         InstructorName = "Cô Thư",
                         ClassName = "ĐHCNTT22B",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -161,7 +161,7 @@ namespace WebSTPM.Models
                         Description = "Xây dựng ứng dụng quản lý trang thiết bị bệnh viện tâm thần cao lãnh",
                         InstructorName = "Cô Linh",
                         ClassName = "ĐHCNTT20B",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -174,7 +174,7 @@ namespace WebSTPM.Models
                         Description = "Website đánh giá kết quả rèn luyện sinh viên trường Đại học Đồng Tháp",
                         InstructorName = "Cô Hương",
                         ClassName = "ĐHCNTT21A",
-                        ContestId = 2,
+                        ContestId = 1,
                         IsApproved = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now
@@ -213,7 +213,7 @@ namespace WebSTPM.Models
                     {
                         AdminUserId = 1,
                         Username = "admin",
-                        Password = "E10ADC3949BA59ABBE56E057F20F883E", 
+                        Password = "admin123", 
                         Role = true,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now

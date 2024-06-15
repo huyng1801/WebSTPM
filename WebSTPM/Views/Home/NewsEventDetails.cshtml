@@ -1,0 +1,17 @@
+﻿@model WebSTPM.Models.NewsEvent
+
+@{
+    ViewData["Title"] = "Chi tiết sự kiện";
+}
+
+<h1>Chi tiết sự kiện</h1>
+
+<div class="card">
+    <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Title" style="width:100%; height:400px; object-fit:cover;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p class="card-text">@Model.Content</p>
+        <p class="card-text">Lượt xem: @Model.Views</p>
+        <a href="@Url.Action("NewsEvents", "Home")" class="btn btn-primary">Quay lại danh sách</a>
+    </div>
+</div>
