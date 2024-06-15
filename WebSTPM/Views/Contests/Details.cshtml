@@ -1,0 +1,52 @@
+﻿@model WebSTPM.Models.Contest
+
+@{
+    ViewData["Title"] = "Contest Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Chi tiết Cuộc Thi: @Model.ContestName</h1>
+
+    <div class="mb-3">
+        <h4>Thông tin cuộc thi</h4>
+        <p><strong>Giới thiệu:</strong> @Model.Introduce</p>
+        <p><strong>Mô tả:</strong> @Model.Description</p>
+        <p><strong>Ngày bắt đầu:</strong> @Model.StartDate.ToShortDateString()</p>
+        <p><strong>Ngày kết thúc:</strong> @Model.EndDate.ToShortDateString()</p>
+    </div>
+
+    <div>
+        <h4>Danh sách các đội tham gia</h4>
+        @if (!Model.Teams.Any())
+        {
+            <div class="alert alert-warning" role="alert">
+                Không có đội tham gia nào.
+            </div>
+        }
+        else
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tên dự án</th>
+                        <th>Thành viên</th>
+                        <th>Lớp</th>
+                        <th>Giảng viên hướng dẫn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var team in Model.Teams)
+                    {
+                        <tr>
+                            <td>@team.ProjectName</td>
+                            <td>@team.TeamMember</td>
+                            <td>@team.ClassName</td>
+                            <td>@team.InstructorName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

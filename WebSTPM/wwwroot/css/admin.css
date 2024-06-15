@@ -1,0 +1,155 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    padding-left: 200px;
+    
+}
+
+.btn-primary {
+    background-color: #006699 !important;
+    border: none;
+    outline: none;
+}
+
+    .btn-primary:hover {
+        background-color: #3ac162 !important;
+    }
+
+
+.text-secondary {
+    color: #777 !important;
+}
+
+
+
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+main {
+    min-width: 80vh;
+}
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    overflow-y: auto;
+    padding: 0;
+    padding-top: 100px; /* Adjust this value to the height of your navbar */
+    z-index: 999;
+    background-color: #006699;
+}
+.sidebar ul {
+    padding-left: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #FFF;
+    font-size: 1.3rem;
+}
+
+    .sidebar ul li a:hover {
+        background-color: rgba(0,0,0,0.1);
+        color: #FFF;
+    }
+
+
+.table table-bordered {
+    border-color: #333;
+}
+
+thead {
+    background-color: #006699;
+    font-weight: 600;
+}
+
+th {
+    color: #FFF;
+    text-align: center;
+}
+
+td {
+    vertical-align: middle;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+}
+
+footer .container .row div h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+footer .container .row div p, footer .container .row div ul {
+    margin-bottom: 1rem;
+}
+
+footer .container .row div ul li a {
+    text-decoration: none !important;
+    color: #333;
+    line-height: 35px;
+}
+
+.fa-solid.fa-arrow-right {
+    color: #006699;
+    margin-right: 5px;
+}
+
+footer .container .row div ul li a:hover {
+    color: #006699 !important;
+}
+
+footer .text-center p {
+    margin-bottom: 0;
+}
+
+footer .py-3 {
+    border-top: 1px solid #e9ecef;
+    margin-top: 2rem;
+}
+
+.pagination .page-item .page-link {
+    color: #FFF;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #006699;
+    border-color: #006699;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #777;
+}
+
+.search:focus {
+    outline: none;
+    box-shadow: none !important;
+}
